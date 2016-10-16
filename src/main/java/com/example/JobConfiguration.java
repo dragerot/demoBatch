@@ -13,8 +13,10 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.example.configuration;
+package com.example;
 
+import com.example.services.AvvikService;
+import com.example.services.Transaksjon;
 import org.springframework.batch.core.Job;
 import org.springframework.batch.core.Step;
 import org.springframework.batch.core.StepContribution;
@@ -25,12 +27,18 @@ import org.springframework.batch.core.step.tasklet.Tasklet;
 import org.springframework.batch.repeat.RepeatStatus;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Import;
 
+
 @Configuration
 @Import(BatchConfiguration.class)
+@ComponentScan(basePackages = {"com.example"})
 public class JobConfiguration {
+
+	@Autowired
+	AvvikService avvikService;
 
 	@Autowired
 	private JobBuilderFactory jobBuilderFactory;
@@ -45,6 +53,9 @@ public class JobConfiguration {
 					@Override
 					public RepeatStatus execute(StepContribution contribution, ChunkContext chunkContext) throws Exception {
 						System.out.println("Hello World!");
+						for(Transaksjon item : avvikService.hentIkkeBehandledeTransaksjoner()){
+							System.out.println(item.toString());
+						}
 						return RepeatStatus.FINISHED;
 					}
 				}).build();

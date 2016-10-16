@@ -1,6 +1,6 @@
-package com.example.test.batch;
+package com.test.batch;
 
-import com.example.configuration.BatchConfiguration;
+import com.example.BatchConfiguration;
 import org.springframework.batch.test.JobLauncherTestUtils;
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.context.annotation.Bean;
@@ -15,4 +15,6 @@ public class TestJobConfiguration {
     public JobLauncherTestUtils jobLauncherTestUtils() {
         return new JobLauncherTestUtils();
     }
+
+
 }
