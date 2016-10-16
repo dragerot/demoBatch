@@ -21,3 +21,16 @@ nbbuild/
 dist/
 nbdist/
 .nb-gradle/
+
+.idea
+*.iml
+
+target/
+
+*.class
+
+# Package Files #
+*.jar
+*.war
+*.ear
+*.bin
