@@ -1,18 +1,15 @@
 package com.example.batchconfig;
 
-import com.example.avvikshantering.Pain002AvvikReader;
-import com.example.avvikshantering.Pain002AvvikWriter;
-import com.example.services.AvvikService;
-import com.example.services.Transaksjon;
 import org.springframework.batch.core.Job;
 import org.springframework.batch.core.Step;
 import org.springframework.batch.core.configuration.annotation.JobBuilderFactory;
-import org.springframework.batch.core.configuration.annotation.StepBuilderFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Import;
+
+import java.io.IOException;
 
 
 @Configuration
@@ -21,41 +18,15 @@ import org.springframework.context.annotation.Import;
 public class JobConfiguration {
 
 	@Autowired
-	AvvikService avvikService;
-
-	@Autowired
 	private JobBuilderFactory jobBuilderFactory;
 
 	@Autowired
-	private StepBuilderFactory stepBuilderFactory;
-
-	@Bean
-	public Pain002AvvikReader pain002AvvikReader() {
-		return new Pain002AvvikReader(avvikService);
-	}
-
-	@Bean
-	public Pain002AvvikWriter pain002AvvikWriter() {
-		return new Pain002AvvikWriter();
-	}
-
-	@Bean
-    public Step pain002AvvikStep(){
-        return stepBuilderFactory
-                .get("pain002AvvikStep")
-				.<Transaksjon,Transaksjon>chunk(1)
-                .reader(pain002AvvikReader())
-//                .processor((ItemProcessor)painInnlesingProcessor)
-                .writer(pain002AvvikWriter())
-//				})
-////                .listener(painInnlesingStepLytter)
-                .build();
-    }
+	private Step pain002AvvikStep;
 
 	@Bean
 	public Job pain002AvvikJob() {
 		return jobBuilderFactory.get("pain002AvvikJob")
-				.start(pain002AvvikStep())
+				.start(pain002AvvikStep)
 				.build();
 	}
 

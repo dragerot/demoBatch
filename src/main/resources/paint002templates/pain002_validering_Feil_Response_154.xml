@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Document xmlns="urn:iso:std:iso:20022:tech:xsd:pain.002.001.03" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <CstmrPmtStsRpt>
+    <GrpHdr>
+      <MsgId>IdGeneratedByBank</MsgId>
+      <CreDtTm>2016-05-04T23:28:18Z</CreDtTm>
+      <InitgPty>
+        <Id>
+          <OrgId>
+            <BICOrBEI>DNBANOKK</BICOrBEI>
+            <Othr>
+              <Id>099943963</Id>
+              <SchmeNm>
+                <Cd>BANK</Cd>
+              </SchmeNm>
+            </Othr>
+          </OrgId>
+        </Id>
+      </InitgPty>
+    </GrpHdr>
+    <OrgnlGrpInfAndSts>
+      <OrgnlMsgId>NAV-UR-002D20160503T002341</OrgnlMsgId>
+      <OrgnlMsgNmId>pain.001.001.03</OrgnlMsgNmId>
+      <OrgnlNbOfTxs>13</OrgnlNbOfTxs>
+      <OrgnlCtrlSum>6663000</OrgnlCtrlSum>
+      <GrpSts>PART</GrpSts>
+    </OrgnlGrpInfAndSts>
+    <OrgnlPmtInfAndSts>
+      <OrgnlPmtInfId>20160000455001D20160503T002341</OrgnlPmtInfId>
+      <PmtInfSts>PART</PmtInfSts>
+      <TxInfAndSts>
+        <OrgnlInstrId>201600110455455001D20160503T002341</OrgnlInstrId>
+        <OrgnlEndToEndId>201600110455455001D20160503T002341</OrgnlEndToEndId>
+        <TxSts>RJCT</TxSts>
+        <StsRsnInf>
+          <Rsn>
+            <Cd>AC03</Cd>
+          </Rsn>
+          <AddtlInf>Creditor account number invalid or missing</AddtlInf>
+        </StsRsnInf>
+        <OrgnlTxRef>
+          <Amt>
+            <InstdAmt Ccy="NOK">15000</InstdAmt>
+          </Amt>
+          <DbtrAcct>
+            <Id>
+              <Othr>
+                <Id>099943963</Id>
+              </Othr>
+            </Id>
+          </DbtrAcct>
+          <CdtrAcct>
+            <Id>
+              <Othr>
+                <Id>12074016136</Id>
+              </Othr>
+            </Id>
+          </CdtrAcct>
+        </OrgnlTxRef>
+      </TxInfAndSts>
+    </OrgnlPmtInfAndSts>
+  </CstmrPmtStsRpt>
+</Document>

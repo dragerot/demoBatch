@@ -1,13 +1,24 @@
 package com.example.services;
 
+import freemarker.cache.FileTemplateLoader;
+import freemarker.cache.TemplateLoader;
+import freemarker.template.TemplateException;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import java.util.ArrayList;
-import java.util.Calendar;
+import java.io.*;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
+
+import freemarker.template.Configuration;
+import freemarker.template.Template;
 
 @Service
 public class AvvikServiceImpl implements AvvikService {
+
+    @Autowired
+    freemarker.template.Configuration  freemarkerConfiguration;
 
     /**
      * Henter alle transaksjoner som ikke er behandlet og knyttet potenseilt avvik.
@@ -16,37 +27,35 @@ public class AvvikServiceImpl implements AvvikService {
      * @return List<Transaksjon>
      */
     public List<Transaksjon> hentIkkeBehandledeTransaksjoner() {
-        List<Transaksjon> ikkeBehandledeTransaksjoner = new ArrayList<Transaksjon>();
-        ikkeBehandledeTransaksjoner.add(createTransaksjon("TRANSAKJSONID_INGENAVVIK"));
-        ikkeBehandledeTransaksjoner.add(createTransaksjon("TRANSAKJSONID_AVVIK"));
-        ikkeBehandledeTransaksjoner.get(1).setListeAvvik(new ArrayList<Avvik>());
-        ikkeBehandledeTransaksjoner.get(1).getListeAvvik().add(createAvvik_Kontonr_mottaker("12345678900"));
-        //if(true) throw new RuntimeException("AvvikServiceImpl ikke implementert");
-        return ikkeBehandledeTransaksjoner;
+        try {
+            prosess();
+            System.out.println("******************OK");
+        }catch (Exception e){
+            System.out.println("******************Feiler");
+        }
+        if(true) throw new RuntimeException("AvvikServiceImpl ikke implementert");
+        return null;
     }
 
+     private void prosess() throws IOException, TemplateException {
+         Map<String, Object> input = new HashMap<String, Object>();
+         input.put("title", "Vogella example");
+         freemarkerConfiguration.setClassForTemplateLoading(this.getClass(), "/templates/");
+         Template template = freemarkerConfiguration.getTemplate("hello.ftl");
+         // Write output to the console
+         Writer consoleWriter = new OutputStreamWriter(System.out);
+         StringWriter stringWriter =new StringWriter();
+         template.process(input,stringWriter);
+         System.out.println("*********************************"+stringWriter.toString());
 
-    private Transaksjon createTransaksjon(String transaction_id) {
-        Transaksjon transaksjon = new Transaksjon();
-        transaksjon.setTransaction_id(transaction_id);
-        transaksjon.setStatus_Transaksjon(Transaksjon_Status.NONE);
-        return transaksjon;
-    }
 
-    private Avvik createAvvik_Kontonr_mottaker(String kontonr_mottaker) {
-        Avvik avvik = new Avvik();
-        avvik.setKontonr_mottaker(kontonr_mottaker);
-        return avvik;
-    }
+//         // For the sake of example, also write output into a file:
+//         Writer fileWriter = new FileWriter(new File("output.html"));
+//         try {
+//             template.process(input, fileWriter);
+//         } finally {
+//             fileWriter.close();
+//         }
 
-    private Avvik createAvvik_Navn_Mottaker(String navn_Mottaker) {
-        Avvik avvik = setAvvikBase(new Avvik());
-        avvik.setNavn_mottaker(navn_Mottaker);
-        return avvik;
-    }
-
-    private Avvik setAvvikBase(Avvik avvik) {
-        avvik.setReg_dato(Calendar.getInstance().getTime());
-        return avvik;
-    }
+     }
 }
