@@ -1,10 +1,22 @@
 package com.example.domain;
 
 
+import java.util.Calendar;
+import java.util.Date;
+
 public class NokkelInfo {
     private String meldingId;
     private String buntId;
     private String transaksjonsId;
+    private Date dato;
+
+    public Date getDato() {
+        return dato;
+    }
+
+    public void setDato(Date dato) {
+        this.dato = dato;
+    }
 
     public String getMeldingId() {
         return meldingId;

@@ -1,7 +1,6 @@
 package com.example.steps.validertpain002generering;
 
 import com.example.domain.NokkelInfo;
-import com.example.services.Transaksjon;
 import org.springframework.batch.core.configuration.annotation.StepScope;
 import org.springframework.batch.item.ItemReader;
 import org.springframework.batch.item.NonTransientResourceException;

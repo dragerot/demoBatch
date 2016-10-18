@@ -1,7 +1,7 @@
 package com.example.steps.avvikshantering;
 
 import com.example.domain.NokkelInfo;
-import com.example.services.Transaksjon;
+import com.example.domain.Transaksjon;
 import org.springframework.batch.core.configuration.annotation.StepScope;
 import org.springframework.batch.item.ItemProcessor;
 import org.springframework.stereotype.Component;

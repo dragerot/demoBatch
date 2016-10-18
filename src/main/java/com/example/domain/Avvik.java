@@ -1,4 +1,4 @@
-package com.example.services;
+package com.example.domain;
 
 //import javax.persistence.*;
 import java.io.Serializable;

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Document xmlns="urn:iso:std:iso:20022:tech:xsd:pain.002.001.03" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <CstmrPmtStsRpt>
+    <GrpHdr>
+      <MsgId>${MsgId}!</MsgId>
+      <CreDtTm>${CreDtTm}!</CreDtTm> <!-- 2016-05-04T23:28:41Z -->
+      <InitgPty>
+        <Id>
+          <OrgId>
+            <BICOrBEI>${BICOrBEI}!</BICOrBEI>
+            <Othr>
+              <Id>${BICOrBEIOthrId}!</Id>
+              <SchmeNm>
+                <Cd>BANK</Cd>
+              </SchmeNm>
+            </Othr>
+          </OrgId>
+        </Id>
+      </InitgPty>
+    </GrpHdr>
+    <OrgnlGrpInfAndSts>
+      <OrgnlMsgId>NAV-UR-002D20160503T002341</OrgnlMsgId>
+      <OrgnlMsgNmId>pain.001.001.03</OrgnlMsgNmId>
+      <OrgnlNbOfTxs>13</OrgnlNbOfTxs>
+      <OrgnlCtrlSum>6663000</OrgnlCtrlSum>
+      <GrpSts>ACTC</GrpSts>
+    </OrgnlGrpInfAndSts>
+  </CstmrPmtStsRpt>
+</Document>

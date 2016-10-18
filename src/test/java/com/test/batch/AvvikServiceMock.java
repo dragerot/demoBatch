@@ -1,9 +1,9 @@
 package com.test.batch;
 
-import com.example.services.Avvik;
+import com.example.domain.Avvik;
 import com.example.services.AvvikService;
-import com.example.services.Transaksjon;
-import com.example.services.Transaksjon_Status;
+import com.example.domain.Transaksjon;
+import com.example.domain.Transaksjon_Status;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;

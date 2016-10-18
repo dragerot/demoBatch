@@ -1,4 +1,4 @@
-package com.example.services;
+package com.example.domain;
 
 import java.io.Serializable;
 import java.util.List;

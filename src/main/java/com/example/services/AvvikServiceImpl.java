@@ -1,24 +1,30 @@
 package com.example.services;
 
-import freemarker.cache.FileTemplateLoader;
-import freemarker.cache.TemplateLoader;
+import com.example.common.DateTimeUtility;
+import com.example.domain.NokkelInfo;
+import com.example.domain.Transaksjon;
 import freemarker.template.TemplateException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.io.*;
+import java.util.Calendar;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-import freemarker.template.Configuration;
 import freemarker.template.Template;
+
+import javax.xml.datatype.XMLGregorianCalendar;
 
 @Service
 public class AvvikServiceImpl implements AvvikService {
 
     @Autowired
     freemarker.template.Configuration  freemarkerConfiguration;
+
+    @Autowired
+    DateTimeUtility dateTimeUtility;
 
     /**
      * Henter alle transaksjoner som ikke er behandlet og knyttet potenseilt avvik.
@@ -39,11 +45,17 @@ public class AvvikServiceImpl implements AvvikService {
 
      private void prosess() throws IOException, TemplateException {
          Map<String, Object> input = new HashMap<String, Object>();
-         input.put("title", "Vogella example");
+         NokkelInfo nokkeInfo = new NokkelInfo();
+         nokkeInfo.setBuntId("B123456");
+         nokkeInfo.setTransaksjonsId("T123456");
+         nokkeInfo.setMeldingId("M123456");
+         nokkeInfo.setDato(dateTimeUtility.retrieveLocalDate("NO"));
+         input.put("title", nokkeInfo);
          freemarkerConfiguration.setClassForTemplateLoading(this.getClass(), "/templates/");
          Template template = freemarkerConfiguration.getTemplate("hello.ftl");
          // Write output to the console
          Writer consoleWriter = new OutputStreamWriter(System.out);
+
          StringWriter stringWriter =new StringWriter();
          template.process(input,stringWriter);
          System.out.println("*********************************"+stringWriter.toString());
