@@ -1,0 +1,223 @@
+<?xml version=" 1.0" encoding=" UTF-8" ?>
+<Document xmlns="urn:iso:std:iso:20022:tech:xsd:pain.001.001.03" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <CstmrCdtTrfInitn>
+        <GrpHdr>
+            <MsgId>158848</MsgId>
+            <CreDtTm>2016-09-09T13:55:50</CreDtTm>
+            <NbOfTxs>3</NbOfTxs>
+            <CtrlSum>6.44</CtrlSum>
+            <InitgPty>
+                <Nm>NAV Juridisk Enhet</Nm>
+                <Id>
+                    <OrgId>
+                        <Othr>
+                            <Id>7783619</Id>
+                            <SchmeNm>
+                                <Cd>CUST</Cd>
+                            </SchmeNm>
+                        </Othr>
+                    </OrgId>
+                </Id>
+            </InitgPty>
+        </GrpHdr>
+        <PmtInf>
+            <PmtInfId>158848-1</PmtInfId>
+            <PmtMtd>TRF</PmtMtd>
+            <BtchBookg>false</BtchBookg>
+            <NbOfTxs>3</NbOfTxs>
+            <CtrlSum>6.44</CtrlSum>
+            <PmtTpInf>
+                <InstrPrty>NO RM</InstrPrty>
+                <SvcLvl>
+                    <Cd>SEPA</Cd>
+                </SvcLvl>
+            </PmtTpInf>
+            <ReqdExctnDt>2016-09-09</ReqdExctnDt>
+            <Dbtr>
+                <Nm>NAV Juridisk Enhet</Nm>
+                <PstlAdr>
+                    <Ctry>NO</Ctry>
+                    <AdrLine>Sannergata 2</AdrLine>
+                </PstlAdr>
+                <Id>
+                    <OrgId>
+                        <Othr>
+                            <Id>7783619</Id>
+                        </Othr>
+                    </OrgId>
+                </Id>
+            </Dbtr>
+            <DbtrAcct>
+                <Id>
+                    <IBAN>NO3379900502759</IBAN>
+                </Id>
+                <Ccy>NOK</Ccy>
+            </DbtrAcct>
+            <DbtrAgt>
+                <FinInstnId>
+                    <BIC>D NBANOKK</BIC>
+                </FinInstnId>
+            </DbtrAgt>
+            <UltmtDbtr>
+                <Nm>NAV Juridisk Enhet</Nm>
+                <Id>
+                    <OrgId>
+                        <Othr>
+                            <Id>7783619</Id>
+                        </Othr>
+                    </OrgId>
+                </Id>
+            </UltmtDbtr>
+            <ChrgBr>SLEV</ChrgBr>
+            <CdtTrfTxInf>
+                <PmtId>
+                    <InstrId>61566156</InstrId>
+                    <EndToEndId>61566156</EndToEndId>
+                </PmtId>
+                <Amt>
+                    <InstdAmt Ccy=" EUR">1.11</InstdAmt>
+                </Amt>
+                <CdtrAgt>
+                    <FinInstnId>
+                        <BIC>ESSLD E66XXX</BIC>
+                    </FinInstnId>
+                </CdtrAgt>
+                <Cdtr>
+                    <Nm>BTB</Nm>
+                    <PstlAdr>
+                        <Ctry>D E</Ctry>
+                        <AdrLine>BERATUNG TECHNOLOGIE BUSINESS SERVICE</AdrLine>
+                        <AdrLine>WILHELM-HAAS STRASSE 6</AdrLine>
+                    </PstlAdr>
+                    <Id>
+                        <OrgId>
+                            <Othr>
+                                <Id>XXXXX</Id>
+                            </Othr>
+                        </OrgId>
+                    </Id>
+                </Cdtr>
+                <CdtrAcct>
+                    <Id>
+                        <IBAN>D E20611500200010046841</IBAN>
+                    </Id>
+                </CdtrAcct>
+                <UltmtCdtr>
+                    <Nm>BTB</Nm>
+                    <Id>
+                        <OrgId>
+                            <Othr>
+                                <Id>XXXXX</Id>
+                            </Othr>
+                        </OrgId>
+                    </Id>
+                </UltmtCdtr>
+                <Purp>
+                    <Cd>SUPP</Cd>
+                </Purp>
+                <RmtInf>
+                    <Ustrd>90013478</Ustrd>
+                </RmtInf>
+            </CdtTrfTxInf>
+            <CdtTrfTxInf>
+                <PmtId>
+                    <InstrId>61566157</InstrId>
+                    <EndToEndId>61566157</EndToEndId>
+                </PmtId>
+                <Amt>
+                    <InstdAmt Ccy="EUR">2.00</InstdAmt>
+                </Amt>
+                <CdtrAgt>
+                    <FinInstnId>
+                        <BIC>KRED BEBB</BIC>
+                    </FinInstnId>
+                </CdtrAgt>
+                <Cdtr>
+                    <Nm>AYOUB PASCALE</Nm>
+                    <PstlAdr>
+                        <Ctry>BE</Ctry>
+                        <AdrLine>33 RUE KEYENVELD</AdrLine>
+                    </PstlAdr>
+                    <Id>
+                        <OrgId>
+                            <Othr>
+                                <Id>XXXXX</Id>
+                            </Othr>
+                        </OrgId>
+                    </Id>
+                </Cdtr>
+                <CdtrAcct>
+                    <Id>
+                        <IBAN>BE25430028818182</IBAN>
+                    </Id>
+                </CdtrAcct>
+                <UltmtCdtr>
+                    <Nm>AYOUB PASCALE</Nm>
+                    <Id>
+                        <OrgId>
+                            <Othr>
+                                <Id>XXXXX</Id>
+                            </Othr>
+                        </OrgId>
+                    </Id>
+                </UltmtCdtr>
+                <Purp>
+                    <Cd>SUPP</Cd>
+                </Purp>
+                <RmtInf>
+                    <Ustrd>2016-07</Ustrd>
+                </RmtInf>
+            </CdtTrfTxInf>
+            <CdtTrfTxInf>
+                <PmtId>
+                    <InstrId>61566158</InstrId>
+                    <EndToEndId>61566158</EndToEndId>
+                </PmtId>
+                <Amt>
+                    <InstdAmt Ccy=" EUR">3.33</InstdAmt>
+                </Amt>
+                <CdtrAgt>
+                    <FinInstnId>
+                        <BIC>KRED BEBB</BIC>
+                    </FinInstnId>
+                </CdtrAgt>
+                <Cdtr>
+                    <Nm>AYOUB PASCALE</Nm>
+                    <PstlAdr>
+                        <Ctry>BE</Ctry>
+                        <AdrLine>33 RUE KEYENVELD</AdrLine>
+                    </PstlAdr>
+                    <Id>
+                        <OrgId>
+                            <Othr>
+                                <Id>XXXXX</Id>
+                            </Othr>
+                        </OrgId>
+                    </Id>
+                </Cdtr>
+                <CdtrAcct>
+                    <Id>
+                        <IBAN>BE25430028818182</IBAN>
+                    </Id>
+                </CdtrAcct>
+                <UltmtCdtr>
+                    <Nm>AYOUB PASCALE</Nm>
+                    <Id>
+                        <OrgId>
+                            <Othr>
+                                <Id>XXXXX</Id>
+                            </Othr>
+                        </OrgId>
+                    </Id>
+                </UltmtCdtr>
+                <Purp>
+                    <Cd>SUPP</Cd>
+                </Purp>
+                <RmtInf>
+                    <Ustrd>2016-08</Ustrd>
+                </RmtInf>
+            </CdtTrfTxInf>
+        </PmtInf>
+    </CstmrCdtTrfInitn>
+</Document>
+

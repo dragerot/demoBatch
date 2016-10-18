@@ -35,7 +35,7 @@ public class Pain002AvviksHandteringConfig {
     public Step pain002AvvikStep(){
         return stepBuilderFactory
                 .get("pain002AvvikStep")
-                .<Transaksjon,NokkelInfo>chunk(2)
+                .<Transaksjon,NokkelInfo>chunk(1)
                 .reader((ItemReader)pain002AvvikReader)
                 .processor((ItemProcessor)validertpain002genereringProcessor)
                 .writer(pain002AvvikWriter)

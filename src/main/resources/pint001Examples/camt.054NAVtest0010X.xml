@@ -1,0 +1,626 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Document xmlns="urn:iso:std:iso:20022:tech:xsd:camt.054.001.02">
+   <BkToCstmrDbtCdtNtfctn>
+      <GrpHdr>
+         <MsgId>IdGeneratedByBank</MsgId>
+         <CreDtTm>2016-05-12T20:59:56.586+03:00</CreDtTm>
+         <MsgRcpt>
+            <Id>
+               <OrgId>
+                  <Othr>
+                     <Id>099943963 099943963 099943963 099943963 099943963 099943963 099943963 099943963 099943963 099943963 099943963 099943963</Id>
+                     <SchmeNm>
+                        <Cd>BANK BANK BANK BANK BANK BANK BANK BANK BANK BANK BANK BANK</Cd>
+                     </SchmeNm>
+                  </Othr>
+                  <Othr>
+                     <Id/>
+                     <SchmeNm>
+                        <Cd/>
+                     </SchmeNm>
+                  </Othr>
+               </OrgId>
+            </Id>
+         </MsgRcpt>
+      </GrpHdr>
+      <Ntfctn>
+         <Id>IdGeneratedByBank</Id>
+         <CreDtTm>2016-05-12T20:59:56.586+03:00</CreDtTm>
+         <Acct>
+            <Id>
+               <Othr>
+                  <Id>79900502740</Id>
+                  <SchmeNm>
+                     <Cd>BBAN</Cd>
+                  </SchmeNm>
+               </Othr>
+            </Id>
+         </Acct>
+         <Ntry>
+            <NtryRef>Ntryref_1234_GenByBank</NtryRef>
+            <Amt Ccy="NOK">49000.00</Amt>
+            <CdtDbtInd>DBIT</CdtDbtInd>
+            <Sts>BOOK</Sts>
+            <BookgDt>
+               <Dt>2016-05-12</Dt>
+            </BookgDt>
+            <ValDt>
+               <Dt>2016-05-12</Dt>
+            </ValDt>
+            <AcctSvcrRef>ReferenceGeneratedByBank</AcctSvcrRef>
+            <BkTxCd>
+               <Domn>
+                  <Cd>PMNT</Cd>
+                  <Fmly>
+                     <Cd>ICDT</Cd>
+                     <SubFmlyCd>XBCT</SubFmlyCd>
+                  </Fmly>
+               </Domn>
+            </BkTxCd>
+            <NtryDtls>
+               <TxDtls>
+                  <Refs>
+                     <MsgId>NAV-UR-001D20160503T002341</MsgId>
+                     <AcctSvcrRef>ReferenceGeneratedByBank</AcctSvcrRef>
+                     <PmtInfId>20160000455001D20160503T002341</PmtInfId>
+                     <InstrId>201600110455455001D20160503T002341</InstrId>
+                     <EndToEndId>201600110455455001D20160503T002341</EndToEndId>
+                  </Refs>
+                  <AmtDtls>
+                     <InstdAmt>
+                        <Amt Ccy="NOK">15000.00</Amt>
+                     </InstdAmt>
+                     <TxAmt>
+                        <Amt Ccy="NOK">15000.00</Amt>
+                     </TxAmt>
+                     <PrtryAmt>
+                        <Tp>IBS</Tp>
+                        <Amt Ccy="NOK">15000.00</Amt>
+                     </PrtryAmt>
+                  </AmtDtls>
+                  <RltdPties>
+                     <DbtrAcct>
+                        <Id>
+                           <Othr>
+                              <Id>79900502740</Id>
+                              <SchmeNm>
+                                 <Cd>BBAN</Cd>
+                              </SchmeNm>
+                           </Othr>
+                        </Id>
+                     </DbtrAcct>
+                     <Cdtr>
+                        <Nm>Firmaet001 AS</Nm>
+                        <PstlAdr>
+                           <StrtNm>Testveien 4</StrtNm>
+                           <PstCd>1400</PstCd>
+                           <TwnNm>Ski</TwnNm>
+                           <Ctry>NO</Ctry>
+                        </PstlAdr>
+                     </Cdtr>
+                  </RltdPties>
+               </TxDtls>
+               <TxDtls>
+                  <Refs>
+                     <MsgId>NAV-UR-001D20160503T002341</MsgId>
+                     <AcctSvcrRef>ReferenceGeneratedByBank</AcctSvcrRef>
+                     <PmtInfId>20160000455001D20160503T002341</PmtInfId>
+                     <InstrId>201600110455455002D20160503T002341</InstrId>
+                     <EndToEndId>201600110455455002D20160503T002341</EndToEndId>
+                  </Refs>
+                  <AmtDtls>
+                     <InstdAmt>
+                        <Amt Ccy="NOK">4000.00</Amt>
+                     </InstdAmt>
+                     <TxAmt>
+                        <Amt Ccy="NOK">4000.00</Amt>
+                     </TxAmt>
+                     <PrtryAmt>
+                        <Tp>IBS</Tp>
+                        <Amt Ccy="NOK">4000.00</Amt>
+                     </PrtryAmt>
+                  </AmtDtls>
+                  <RltdPties>
+                     <DbtrAcct>
+                        <Id>
+                           <Othr>
+                              <Id>79900502740</Id>
+                              <SchmeNm>
+                                 <Cd>BBAN</Cd>
+                              </SchmeNm>
+                           </Othr>
+                        </Id>
+                     </DbtrAcct>
+                     <Cdtr>
+                        <Nm>Toril Olsen</Nm>
+                        <PstlAdr>
+                           <PstCd>1067</PstCd>
+                           <TwnNm>Oslo</TwnNm>
+                           <Ctry>NO</Ctry>
+                           <AdrLine>Persveien 4</AdrLine>
+                        </PstlAdr>
+                     </Cdtr>
+                  </RltdPties>
+               </TxDtls>
+               <TxDtls>
+                  <Refs>
+                     <MsgId>NAV-UR-001D20160503T002341</MsgId>
+                     <AcctSvcrRef>ReferenceGeneratedByBank</AcctSvcrRef>
+                     <PmtInfId>20160000455001D20160503T002341</PmtInfId>
+                     <InstrId>201600110455455003D20160503T002341</InstrId>
+                     <EndToEndId>201600110455455003D20160503T002341</EndToEndId>
+                  </Refs>
+                  <AmtDtls>
+                     <InstdAmt>
+                        <Amt Ccy="NOK">10000.00</Amt>
+                     </InstdAmt>
+                     <TxAmt>
+                        <Amt Ccy="NOK">10000.00</Amt>
+                     </TxAmt>
+                     <PrtryAmt>
+                        <Tp>IBS</Tp>
+                        <Amt Ccy="NOK">10000.00</Amt>
+                     </PrtryAmt>
+                  </AmtDtls>
+                  <RltdPties>
+                     <DbtrAcct>
+                        <Id>
+                           <Othr>
+                              <Id>79900502740</Id>
+                              <SchmeNm>
+                                 <Cd>BBAN</Cd>
+                              </SchmeNm>
+                           </Othr>
+                        </Id>
+                     </DbtrAcct>
+                     <Cdtr>
+                        <Nm>Firmaet002 AS</Nm>
+                        <PstlAdr>
+                           <StrtNm>Testveien 4</StrtNm>
+                           <PstCd>1400</PstCd>
+                           <TwnNm>Ski</TwnNm>
+                           <Ctry>NO</Ctry>
+                        </PstlAdr>
+                     </Cdtr>
+                  </RltdPties>
+               </TxDtls>
+               <TxDtls>
+                  <Refs>
+                     <MsgId>NAV-UR-001D20160503T002341</MsgId>
+                     <AcctSvcrRef>ReferenceGeneratedByBank</AcctSvcrRef>
+                     <PmtInfId>20160000455001D20160503T002341</PmtInfId>
+                     <InstrId>201600110455455011D20160503T002341</InstrId>
+                     <EndToEndId>201600110455455011D20160503T002341</EndToEndId>
+                  </Refs>
+                  <AmtDtls>
+                     <InstdAmt>
+                        <Amt Ccy="NOK">15000.00</Amt>
+                     </InstdAmt>
+                     <TxAmt>
+                        <Amt Ccy="NOK">15000.00</Amt>
+                     </TxAmt>
+                     <PrtryAmt>
+                        <Tp>IBS</Tp>
+                        <Amt Ccy="NOK">15000.00</Amt>
+                     </PrtryAmt>
+                  </AmtDtls>
+                  <RltdPties>
+                     <DbtrAcct>
+                        <Id>
+                           <Othr>
+                              <Id>79900502740</Id>
+                              <SchmeNm>
+                                 <Cd>BBAN</Cd>
+                              </SchmeNm>
+                           </Othr>
+                        </Id>
+                     </DbtrAcct>
+                     <Cdtr>
+                        <Nm>Firmaet003 AS</Nm>
+                        <PstlAdr>
+                           <StrtNm>Testveien 6</StrtNm>
+                           <PstCd>1400</PstCd>
+                           <TwnNm>Ski</TwnNm>
+                           <Ctry>NO</Ctry>
+                        </PstlAdr>
+                     </Cdtr>
+                  </RltdPties>
+                  <RmtInf>
+                     <Strd>
+                        <CdtrRefInf>
+                           <Tp>
+                              <CdOrPrtry>
+                                 <Cd>SCOR</Cd>
+                              </CdOrPrtry>
+                           </Tp>
+                           <Ref>1354158</Ref>
+                        </CdtrRefInf>
+                     </Strd>
+                  </RmtInf>
+               </TxDtls>
+               <TxDtls>
+                  <Refs>
+                     <MsgId>NAV-UR-001D20160503T002341</MsgId>
+                     <AcctSvcrRef>ReferenceGeneratedByBank</AcctSvcrRef>
+                     <PmtInfId>20160000455001D20160503T002341</PmtInfId>
+                     <InstrId>201600110455455012D20160503T002341</InstrId>
+                     <EndToEndId>201600110455455012D20160503T002341</EndToEndId>
+                  </Refs>
+                  <AmtDtls>
+                     <InstdAmt>
+                        <Amt Ccy="NOK">5000.00</Amt>
+                     </InstdAmt>
+                     <TxAmt>
+                        <Amt Ccy="NOK">5000.00</Amt>
+                     </TxAmt>
+                     <PrtryAmt>
+                        <Tp>IBS</Tp>
+                        <Amt Ccy="NOK">5000.00</Amt>
+                     </PrtryAmt>
+                  </AmtDtls>
+                  <RltdPties>
+                     <DbtrAcct>
+                        <Id>
+                           <Othr>
+                              <Id>79900502740</Id>
+                              <SchmeNm>
+                                 <Cd>BBAN</Cd>
+                              </SchmeNm>
+                           </Othr>
+                        </Id>
+                     </DbtrAcct>
+                     <Cdtr>
+                        <Nm>Firmaet002 AS</Nm>
+                        <PstlAdr>
+                           <StrtNm>Testveien 8</StrtNm>
+                           <PstCd>1400</PstCd>
+                           <TwnNm>Ski</TwnNm>
+                           <Ctry>NO</Ctry>
+                        </PstlAdr>
+                     </Cdtr>
+                  </RltdPties>
+               </TxDtls>
+            </NtryDtls>
+         </Ntry>
+         <Ntry>
+            <NtryRef>Ntryref_1234_GenByBank</NtryRef>
+            <Amt Ccy="NOK">14000.00</Amt>
+            <CdtDbtInd>DBIT</CdtDbtInd>
+            <Sts>BOOK</Sts>
+            <BookgDt>
+               <Dt>2016-05-12</Dt>
+            </BookgDt>
+            <ValDt>
+               <Dt>2016-05-12</Dt>
+            </ValDt>
+            <AcctSvcrRef>ReferenceGeneratedByBank</AcctSvcrRef>
+            <BkTxCd>
+               <Domn>
+                  <Cd>PMNT</Cd>
+                  <Fmly>
+                     <Cd>ICDT</Cd>
+                     <SubFmlyCd>XBCT</SubFmlyCd>
+                  </Fmly>
+               </Domn>
+            </BkTxCd>
+            <NtryDtls>
+               <TxDtls>
+                  <Refs>
+                     <MsgId>NAV-UR-001D20160503T002341</MsgId>
+                     <AcctSvcrRef>ReferenceGeneratedByBank</AcctSvcrRef>
+                     <PmtInfId>20160000455002D20160503T002341</PmtInfId>
+                     <InstrId>201600110455455004D20160503T002341</InstrId>
+                     <EndToEndId>201600110455455004D20160503T002341</EndToEndId>
+                  </Refs>
+                  <AmtDtls>
+                     <InstdAmt>
+                        <Amt Ccy="NOK">2000.00</Amt>
+                     </InstdAmt>
+                     <TxAmt>
+                        <Amt Ccy="NOK">2000.00</Amt>
+                     </TxAmt>
+                     <PrtryAmt>
+                        <Tp>IBS</Tp>
+                        <Amt Ccy="NOK">2000.00</Amt>
+                     </PrtryAmt>
+                  </AmtDtls>
+                  <RltdPties>
+                     <DbtrAcct>
+                        <Id>
+                           <Othr>
+                              <Id>79900502740</Id>
+                              <SchmeNm>
+                                 <Cd>BBAN</Cd>
+                              </SchmeNm>
+                           </Othr>
+                        </Id>
+                     </DbtrAcct>
+                     <Cdtr>
+                        <Nm>Toril Nilsen02</Nm>
+                        <PstlAdr>
+                           <PstCd>1067</PstCd>
+                           <TwnNm>Oslo</TwnNm>
+                           <Ctry>NO</Ctry>
+                           <AdrLine>Persveien 6</AdrLine>
+                        </PstlAdr>
+                     </Cdtr>
+                  </RltdPties>
+                  <RmtInf>
+                     <Ustrd>Utbetaling fra NAV </Ustrd>
+                  </RmtInf>
+               </TxDtls>
+               <TxDtls>
+                  <Refs>
+                     <MsgId>NAV-UR-001D20160503T002341</MsgId>
+                     <AcctSvcrRef>ReferenceGeneratedByBank</AcctSvcrRef>
+                     <PmtInfId>20160000455002D20160503T002341</PmtInfId>
+                     <InstrId>201600110455455005D20160503T002341</InstrId>
+                     <EndToEndId>201600110455455005D20160503T002341</EndToEndId>
+                  </Refs>
+                  <AmtDtls>
+                     <InstdAmt>
+                        <Amt Ccy="NOK">2000.00</Amt>
+                     </InstdAmt>
+                     <TxAmt>
+                        <Amt Ccy="NOK">2000.00</Amt>
+                     </TxAmt>
+                     <PrtryAmt>
+                        <Tp>IBS</Tp>
+                        <Amt Ccy="NOK">2000.00</Amt>
+                     </PrtryAmt>
+                  </AmtDtls>
+                  <RltdPties>
+                     <DbtrAcct>
+                        <Id>
+                           <Othr>
+                              <Id>79900502740</Id>
+                              <SchmeNm>
+                                 <Cd>BBAN</Cd>
+                              </SchmeNm>
+                           </Othr>
+                        </Id>
+                     </DbtrAcct>
+                     <Cdtr>
+                        <Nm>Toril Nilsen02</Nm>
+                        <PstlAdr>
+                           <PstCd>1067</PstCd>
+                           <TwnNm>Oslo</TwnNm>
+                           <Ctry>NO</Ctry>
+                           <AdrLine>Persveien 6</AdrLine>
+                        </PstlAdr>
+                     </Cdtr>
+                  </RltdPties>
+                  <RmtInf>
+                     <Ustrd>Utbetaling fra NAV </Ustrd>
+                  </RmtInf>
+               </TxDtls>
+               <TxDtls>
+                  <Refs>
+                     <MsgId>NAV-UR-001D20160503T002341</MsgId>
+                     <AcctSvcrRef>ReferenceGeneratedByBank</AcctSvcrRef>
+                     <PmtInfId>20160000455002D20160503T002341</PmtInfId>
+                     <InstrId>201600110455455006D20160503T002341</InstrId>
+                     <EndToEndId>201600110455455006D20160503T002341</EndToEndId>
+                  </Refs>
+                  <AmtDtls>
+                     <InstdAmt>
+                        <Amt Ccy="NOK">2000.00</Amt>
+                     </InstdAmt>
+                     <TxAmt>
+                        <Amt Ccy="NOK">2000.00</Amt>
+                     </TxAmt>
+                     <PrtryAmt>
+                        <Tp>IBS</Tp>
+                        <Amt Ccy="NOK">2000.00</Amt>
+                     </PrtryAmt>
+                  </AmtDtls>
+                  <RltdPties>
+                     <DbtrAcct>
+                        <Id>
+                           <Othr>
+                              <Id>79900502740</Id>
+                              <SchmeNm>
+                                 <Cd>BBAN</Cd>
+                              </SchmeNm>
+                           </Othr>
+                        </Id>
+                     </DbtrAcct>
+                     <Cdtr>
+                        <Nm>Toril Nilsen02</Nm>
+                        <PstlAdr>
+                           <PstCd>1067</PstCd>
+                           <TwnNm>Oslo</TwnNm>
+                           <Ctry>NO</Ctry>
+                           <AdrLine>Persveien 6</AdrLine>
+                        </PstlAdr>
+                     </Cdtr>
+                  </RltdPties>
+                  <RmtInf>
+                     <Ustrd>Utbetaling fra NAV </Ustrd>
+                  </RmtInf>
+               </TxDtls>
+               <TxDtls>
+                  <Refs>
+                     <MsgId>NAV-UR-001D20160503T002341</MsgId>
+                     <AcctSvcrRef>ReferenceGeneratedByBank</AcctSvcrRef>
+                     <PmtInfId>20160000455002D20160503T002341</PmtInfId>
+                     <InstrId>201600110455455007D20160503T002341</InstrId>
+                     <EndToEndId>201600110455455007D20160503T002341</EndToEndId>
+                  </Refs>
+                  <AmtDtls>
+                     <InstdAmt>
+                        <Amt Ccy="NOK">2000.00</Amt>
+                     </InstdAmt>
+                     <TxAmt>
+                        <Amt Ccy="NOK">2000.00</Amt>
+                     </TxAmt>
+                     <PrtryAmt>
+                        <Tp>IBS</Tp>
+                        <Amt Ccy="NOK">2000.00</Amt>
+                     </PrtryAmt>
+                  </AmtDtls>
+                  <RltdPties>
+                     <DbtrAcct>
+                        <Id>
+                           <Othr>
+                              <Id>79900502740</Id>
+                              <SchmeNm>
+                                 <Cd>BBAN</Cd>
+                              </SchmeNm>
+                           </Othr>
+                        </Id>
+                     </DbtrAcct>
+                     <Cdtr>
+                        <Nm>Toril Nilsen02</Nm>
+                        <PstlAdr>
+                           <PstCd>1067</PstCd>
+                           <TwnNm>Oslo</TwnNm>
+                           <Ctry>NO</Ctry>
+                           <AdrLine>Persveien 6</AdrLine>
+                        </PstlAdr>
+                     </Cdtr>
+                  </RltdPties>
+                  <RmtInf>
+                     <Ustrd>Utbetaling fra NAV </Ustrd>
+                  </RmtInf>
+               </TxDtls>
+               <TxDtls>
+                  <Refs>
+                     <MsgId>NAV-UR-001D20160503T002341</MsgId>
+                     <AcctSvcrRef>ReferenceGeneratedByBank</AcctSvcrRef>
+                     <PmtInfId>20160000455002D20160503T002341</PmtInfId>
+                     <InstrId>201600110455455008D20160503T002341</InstrId>
+                     <EndToEndId>201600110455455008D20160503T002341</EndToEndId>
+                  </Refs>
+                  <AmtDtls>
+                     <InstdAmt>
+                        <Amt Ccy="NOK">2000.00</Amt>
+                     </InstdAmt>
+                     <TxAmt>
+                        <Amt Ccy="NOK">2000.00</Amt>
+                     </TxAmt>
+                     <PrtryAmt>
+                        <Tp>IBS</Tp>
+                        <Amt Ccy="NOK">2000.00</Amt>
+                     </PrtryAmt>
+                  </AmtDtls>
+                  <RltdPties>
+                     <DbtrAcct>
+                        <Id>
+                           <Othr>
+                              <Id>79900502740</Id>
+                              <SchmeNm>
+                                 <Cd>BBAN</Cd>
+                              </SchmeNm>
+                           </Othr>
+                        </Id>
+                     </DbtrAcct>
+                     <Cdtr>
+                        <Nm>Toril Nilsen02</Nm>
+                        <PstlAdr>
+                           <PstCd>1067</PstCd>
+                           <TwnNm>Oslo</TwnNm>
+                           <Ctry>NO</Ctry>
+                           <AdrLine>Persveien 6</AdrLine>
+                        </PstlAdr>
+                     </Cdtr>
+                  </RltdPties>
+                  <RmtInf>
+                     <Ustrd>Utbetaling fra NAV </Ustrd>
+                  </RmtInf>
+               </TxDtls>
+               <TxDtls>
+                  <Refs>
+                     <MsgId>NAV-UR-001D20160503T002341</MsgId>
+                     <AcctSvcrRef>ReferenceGeneratedByBank</AcctSvcrRef>
+                     <PmtInfId>20160000455002D20160503T002341</PmtInfId>
+                     <InstrId>201600110455455009D20160503T002341</InstrId>
+                     <EndToEndId>201600110455455009D20160503T002341</EndToEndId>
+                  </Refs>
+                  <AmtDtls>
+                     <InstdAmt>
+                        <Amt Ccy="NOK">2000.00</Amt>
+                     </InstdAmt>
+                     <TxAmt>
+                        <Amt Ccy="NOK">2000.00</Amt>
+                     </TxAmt>
+                     <PrtryAmt>
+                        <Tp>IBS</Tp>
+                        <Amt Ccy="NOK">2000.00</Amt>
+                     </PrtryAmt>
+                  </AmtDtls>
+                  <RltdPties>
+                     <DbtrAcct>
+                        <Id>
+                           <Othr>
+                              <Id>79900502740</Id>
+                              <SchmeNm>
+                                 <Cd>BBAN</Cd>
+                              </SchmeNm>
+                           </Othr>
+                        </Id>
+                     </DbtrAcct>
+                     <Cdtr>
+                        <Nm>Toril Nilsen02</Nm>
+                        <PstlAdr>
+                           <PstCd>1067</PstCd>
+                           <TwnNm>Oslo</TwnNm>
+                           <Ctry>NO</Ctry>
+                           <AdrLine>Persveien 6</AdrLine>
+                        </PstlAdr>
+                     </Cdtr>
+                  </RltdPties>
+                  <RmtInf>
+                     <Ustrd>Utbetaling fra NAV </Ustrd>
+                  </RmtInf>
+               </TxDtls>
+               <TxDtls>
+                  <Refs>
+                     <MsgId>NAV-UR-001D20160503T002341</MsgId>
+                     <AcctSvcrRef>ReferenceGeneratedByBank</AcctSvcrRef>
+                     <PmtInfId>20160000455002D20160503T002341</PmtInfId>
+                     <InstrId>201600110455455010D20160503T002341</InstrId>
+                     <EndToEndId>201600110455455010D20160503T002341</EndToEndId>
+                  </Refs>
+                  <AmtDtls>
+                     <InstdAmt>
+                        <Amt Ccy="NOK">2000.00</Amt>
+                     </InstdAmt>
+                     <TxAmt>
+                        <Amt Ccy="NOK">2000.00</Amt>
+                     </TxAmt>
+                     <PrtryAmt>
+                        <Tp>IBS</Tp>
+                        <Amt Ccy="NOK">2000.00</Amt>
+                     </PrtryAmt>
+                  </AmtDtls>
+                  <RltdPties>
+                     <DbtrAcct>
+                        <Id>
+                           <Othr>
+                              <Id>79900502740</Id>
+                              <SchmeNm>
+                                 <Cd>BBAN</Cd>
+                              </SchmeNm>
+                           </Othr>
+                        </Id>
+                     </DbtrAcct>
+                     <Cdtr>
+                        <Nm>Toril Nilsen02</Nm>
+                        <PstlAdr>
+                           <PstCd>1067</PstCd>
+                           <TwnNm>Oslo</TwnNm>
+                           <Ctry>NO</Ctry>
+                           <AdrLine>Persveien 6</AdrLine>
+                        </PstlAdr>
+                     </Cdtr>
+                  </RltdPties>
+                  <RmtInf>
+                     <Ustrd>Utbetaling fra NAV </Ustrd>
+                  </RmtInf>
+               </TxDtls>
+            </NtryDtls>
+         </Ntry>
+      </Ntfctn>
+   </BkToCstmrDbtCdtNtfctn>
+</Document>
