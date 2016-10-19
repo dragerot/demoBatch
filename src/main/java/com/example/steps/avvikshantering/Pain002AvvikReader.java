@@ -27,8 +27,6 @@ public class Pain002AvvikReader implements ItemReader<Transaksjon> {
     @Autowired
     AvvikService avvikService;
 
-
-
     /**
      * Constructor
      *

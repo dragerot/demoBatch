@@ -1,4 +1,4 @@
-package com.example.batchconfig;
+package com.example.config;
 
 import org.springframework.batch.core.Job;
 import org.springframework.batch.core.Step;
@@ -8,8 +8,6 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Import;
-
-import java.io.IOException;
 
 
 @Configuration

@@ -1,6 +1,6 @@
 package com.example.steps.avvikshantering;
 
-import com.example.batchconfig.BatchConfiguration;
+import com.example.config.BatchConfiguration;
 import com.example.domain.NokkelInfo;
 import com.example.domain.Transaksjon;
 import org.springframework.batch.core.Step;

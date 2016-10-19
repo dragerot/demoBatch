@@ -44,30 +44,31 @@ public class AvvikServiceImpl implements AvvikService {
     }
 
      private void prosess() throws IOException, TemplateException {
-         Map<String, Object> input = new HashMap<String, Object>();
-         NokkelInfo nokkeInfo = new NokkelInfo();
-         nokkeInfo.setBuntId("B123456");
-         nokkeInfo.setTransaksjonsId("T123456");
-         nokkeInfo.setMeldingId("M123456");
-         nokkeInfo.setDato(dateTimeUtility.retrieveLocalDate("NO"));
-         input.put("title", nokkeInfo);
-         freemarkerConfiguration.setClassForTemplateLoading(this.getClass(), "/templates/");
-         Template template = freemarkerConfiguration.getTemplate("hello.ftl");
-         // Write output to the console
-         Writer consoleWriter = new OutputStreamWriter(System.out);
-
-         StringWriter stringWriter =new StringWriter();
-         template.process(input,stringWriter);
-         System.out.println("*********************************"+stringWriter.toString());
-
-
-//         // For the sake of example, also write output into a file:
-//         Writer fileWriter = new FileWriter(new File("output.html"));
-//         try {
-//             template.process(input, fileWriter);
-//         } finally {
-//             fileWriter.close();
-//         }
-
+//         Map<String, Object> input = new HashMap<String,Object>() {
+//         };
+//         NokkelInfo nokkeInfo = new NokkelInfo();
+//         nokkeInfo.setBuntId("B123456");
+//         nokkeInfo.setTransaksjonsId("T123456");
+//         nokkeInfo.setMeldingId("M123456");
+//         nokkeInfo.setDato(dateTimeUtility.retrieveLocalDate("NO"));
+//         input.put("title", nokkeInfo);
+//         freemarkerConfiguration.setClassForTemplateLoading(this.getClass(), "/templates/");
+//         Template template = freemarkerConfiguration.getTemplate("hello.ftl");
+//         // Write output to the console
+//         Writer consoleWriter = new OutputStreamWriter(System.out);
+//
+//         StringWriter stringWriter =new StringWriter();
+//         template.process(input,stringWriter);
+//         System.out.println("*********************************"+stringWriter.toString());
+//
+//
+////         // For the sake of example, also write output into a file:
+////         Writer fileWriter = new FileWriter(new File("output.html"));
+////         try {
+////             template.process(input, fileWriter);
+////         } finally {
+////             fileWriter.close();
+////         }
+//
      }
 }

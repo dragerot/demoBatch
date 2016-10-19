@@ -1,6 +1,6 @@
 package com.test.batch;
 
-import com.example.batchconfig.BatchConfiguration;
+import com.example.config.BatchConfiguration;
 import com.example.services.AvvikService;
 import org.springframework.batch.test.JobLauncherTestUtils;
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration;

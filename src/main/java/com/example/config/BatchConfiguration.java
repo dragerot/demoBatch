@@ -1,4 +1,4 @@
-package com.example.batchconfig;
+package com.example.config;
 
 import freemarker.template.TemplateExceptionHandler;
 import org.springframework.batch.core.configuration.annotation.EnableBatchProcessing;

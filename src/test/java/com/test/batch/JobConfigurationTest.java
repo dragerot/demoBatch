@@ -31,14 +31,6 @@ public class JobConfigurationTest {
 		assertEquals(BatchStatus.COMPLETED, jobExecution.getStatus());
 	}
 
-    @Test
-    public void testJobb2() throws Exception{
-//        JobExecution jobExecution = jobLauncherTestUtils.launchJob();
-//        StepExecution firstStepExecution = jobExecution.getStepExecutions().iterator().next();
-
-	}
-
-
 //	public FreeMarkerAutoConfiguration freeMarkerNonWebConfiguration(ApplicationContext applicationContext, FreeMarkerProperties properties){
 //		return new FreeMarkerAutoConfiguration(applicationContext,properties);
 //	};
