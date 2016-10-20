@@ -1,15 +1,16 @@
 package com.example.steps.avvikshantering;
 
+import com.example.config.ServiceConfiguration;
 import com.example.services.AvvikService;
 import com.example.domain.Transaksjon;
-import org.springframework.batch.core.configuration.annotation.StepScope;
 import org.springframework.batch.item.ItemReader;
 import org.springframework.batch.item.NonTransientResourceException;
 import org.springframework.batch.item.ParseException;
 import org.springframework.batch.item.UnexpectedInputException;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Component;
+import org.springframework.context.annotation.Import;
 
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -17,9 +18,7 @@ import java.util.List;
  * https://www.petrikainulainen.net/programming/spring-framework/spring-batch-tutorial-reading-information-from-a-rest-api/
  *
  */
-
-@Component
-@StepScope
+@Import( {ServiceConfiguration.class})
 public class Pain002AvvikReader implements ItemReader<Transaksjon> {
     private int nesteTransaksjonIndex;
     private List<Transaksjon> transaksjonData;
@@ -37,9 +36,6 @@ public class Pain002AvvikReader implements ItemReader<Transaksjon> {
 
     @Override
     public Transaksjon read() throws Exception, UnexpectedInputException, ParseException, NonTransientResourceException {
-
-
-           System.out.println("******************Pain002AvvikReader");
         if (transaksjonListIsNotInitialized()) {
             transaksjonData = hentTransaksjonerFraService();
         }
@@ -56,7 +52,8 @@ public class Pain002AvvikReader implements ItemReader<Transaksjon> {
     }
 
     private List<Transaksjon> hentTransaksjonerFraService() {
-        List<Transaksjon> transaksjonList = avvikService.hentIkkeBehandledeTransaksjoner();
+        List<Transaksjon> transaksjonList = new ArrayList<>();
+        transaksjonList.add(new Transaksjon("Trans1","Melding1"));
         return transaksjonList;
     }
 }

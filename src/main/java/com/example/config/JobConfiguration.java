@@ -1,5 +1,6 @@
 package com.example.config;
 
+import com.example.steps.avvikshantering.Pain002AvviksHandteringConfig;
 import org.springframework.batch.core.Job;
 import org.springframework.batch.core.Step;
 import org.springframework.batch.core.configuration.annotation.JobBuilderFactory;
@@ -11,8 +12,7 @@ import org.springframework.context.annotation.Import;
 
 
 @Configuration
-@Import(BatchConfiguration.class)
-@ComponentScan(basePackages = {"com.example"})
+@Import( {BatchConfiguration.class, ServiceConfiguration.class, Pain002AvviksHandteringConfig.class})
 public class JobConfiguration {
 
 	@Autowired

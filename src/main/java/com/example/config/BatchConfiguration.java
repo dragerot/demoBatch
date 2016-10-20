@@ -11,13 +11,5 @@ import java.util.Locale;
 @EnableBatchProcessing
 public class BatchConfiguration {
 
-    @Bean
-    public freemarker.template.Configuration freemarkerConfiguration(){
-        freemarker.template.Configuration cfg = new freemarker.template.Configuration();
-        //cfg.setClassForTemplateLoading(DemoBatchApplication.class, "templates");
-        cfg.setDefaultEncoding("UTF-8");
-        cfg.setLocale(Locale.getDefault());
-        cfg.setTemplateExceptionHandler(TemplateExceptionHandler.RETHROW_HANDLER);
-        return cfg;
-    }
+
 }

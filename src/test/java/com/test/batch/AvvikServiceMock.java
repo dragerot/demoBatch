@@ -1,59 +1,72 @@
 package com.test.batch;
 
-import com.example.domain.Avvik;
+import com.example.domain.*;
 import com.example.services.AvvikService;
-import com.example.domain.Transaksjon;
-import com.example.domain.Transaksjon_Status;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.List;
+import java.util.UUID;
 
-@Service
 public class AvvikServiceMock implements AvvikService {
+    @Override
+    public List<Melding> hentMeldinger() {
+        List<Melding> meldinger = new ArrayList<Melding>();
+        List<Bunt> bunter0 = new ArrayList<Bunt>();
+        List<Transaksjon> transaksjoner = new ArrayList<Transaksjon>();
+        transaksjoner.add(0, createTransaksjon("Trans0", "melding0"));
+        transaksjoner.add(1, createTransaksjon("Trans1", "melding1"));
+        transaksjoner.add(2, createTransaksjon("Trans2", "melding2"));
+        transaksjoner.add(3, createTransaksjon("Trans3", "melding3"));
+        bunter0.add(createBunt("bunt0", transaksjoner));
+        meldinger.add(0, createMelding("melding0", bunter0));
 
-    /**
-     * Henter alle transaksjoner som ikke er behandlet og knyttet potenseilt avvik.
-     * Ingen avvik tilsvarer et happy scenaria, dvs Paint.002 OK
-     *
-     * @return List<Transaksjon>
-     */
-    public List<Transaksjon> hentIkkeBehandledeTransaksjoner() {
-        List<Transaksjon> ikkeBehandledeTransaksjoner = new ArrayList<Transaksjon>();
-        ikkeBehandledeTransaksjoner.add(createTransaksjon("TRANSAKJSONID_INGENAVVIK",Transaksjon_Status.NONE));
-        ikkeBehandledeTransaksjoner.add(createTransaksjon("TRANSAKJSONID_AVVIK",Transaksjon_Status.REJECTED));
-        ikkeBehandledeTransaksjoner.add(createTransaksjon("TRANSAKJSONID_VALDIDERT",Transaksjon_Status.VALIDATED));
-        ikkeBehandledeTransaksjoner.get(0).setListeAvvik(new ArrayList<Avvik>());
-        ikkeBehandledeTransaksjoner.get(0).getListeAvvik().add(createAvvik_Kontonr_mottaker("12345678900"));
-        ikkeBehandledeTransaksjoner.get(1).setListeAvvik(new ArrayList<Avvik>());
-        ikkeBehandledeTransaksjoner.get(1).getListeAvvik().add(createAvvik_Kontonr_mottaker("12345678901"));
-        return ikkeBehandledeTransaksjoner;
+        List<Bunt> bunter1 = new ArrayList<Bunt>();
+        transaksjoner = new ArrayList<Transaksjon>();
+        transaksjoner.add(0, createTransaksjon("Trans4", "melding4"));
+        transaksjoner.add(1, createTransaksjon("Trans5", "melding5"));
+        bunter1.add(createBunt("bunt1", transaksjoner));
+        meldinger.add(1, createMelding("melding1", bunter1));
+
+        List<Bunt> bunter2 = new ArrayList<Bunt>();
+        transaksjoner = new ArrayList<Transaksjon>();
+        transaksjoner.add(0, createTransaksjon("Trans6", "melding7"));
+        bunter2.add(createBunt("bunt2", transaksjoner));
+        meldinger.add(2, createMelding("melding2", bunter2));
+        return meldinger;
+}
+
+//    private List<Melding> createMeldinger(){
+//        List<Melding> meldinger = new ArrayList<Melding>();
+//        for(int i = 0; i<100; i++){
+//            List<Bunt> bunter = new ArrayList<Bunt>();
+//            List<Transaksjon> transaksjoner = new ArrayList<Transaksjon>();
+//            for(int j=0; j<10; j++){
+//                transaksjoner.add(i, createTransaksjon("Trans", "melding"));
+//                transaksjoner.add(i, createTransaksjon("Trans1", "melding"));
+//                transaksjoner.add(i, createTransaksjon("Trans2", "melding2"));
+//                transaksjoner.add(i, createTransaksjon("Trans3", "melding3"));
+//            }
+//            bunter.add(createBunt("bunt"+i, transaksjoner));
+//            meldinger.add(i, createMelding("melding"+i, bunter));
+//
+//        }
+//        return meldinger;
+//      }
+
+    private Melding createMelding(String buntId, List<Bunt> bunter) {
+        return new Melding(buntId, bunter);
     }
 
+    private Bunt createBunt(String buntId, List<Transaksjon> transaksjoner) {
+        return new Bunt(buntId, transaksjoner);
+    }
 
-    private Transaksjon createTransaksjon(String transaction_id, Transaksjon_Status status) {
-        Transaksjon transaksjon = new Transaksjon();
-        transaksjon.setTransaction_id(transaction_id);
-        transaksjon.setStatus_Transaksjon(status);
-        transaksjon.setStatus_Transaksjon(Transaksjon_Status.NONE);
+    private Transaksjon createTransaksjon(String transaksjonId, String melding) {
+        Transaksjon transaksjon = new Transaksjon(transaksjonId, melding);
         return transaksjon;
     }
 
-    private Avvik createAvvik_Kontonr_mottaker(String kontonr_mottaker) {
-        Avvik avvik = new Avvik();
-        avvik.setKontonr_mottaker(kontonr_mottaker);
-        return avvik;
-    }
 
-    private Avvik createAvvik_Navn_Mottaker(String navn_Mottaker) {
-        Avvik avvik = setAvvikBase(new Avvik());
-        avvik.setNavn_mottaker(navn_Mottaker);
-        return avvik;
-    }
-
-    private Avvik setAvvikBase(Avvik avvik) {
-        avvik.setReg_dato(Calendar.getInstance().getTime());
-        return avvik;
-    }
 }

@@ -6,5 +6,5 @@ import java.io.Writer;
 
 
 public interface TemplateXMLGenerationService {
-    Writer generate(String template, Object melding)  throws IOException, TemplateException;
+    Writer genererXML(String template, Object melding);
 }

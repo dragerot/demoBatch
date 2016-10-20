@@ -1,25 +1,31 @@
 package com.example.services;
 
-import com.example.domain.Melding;
-import org.springframework.stereotype.Service;
-
 import javax.xml.stream.XMLEventReader;
 import javax.xml.stream.XMLInputFactory;
 import javax.xml.stream.XMLStreamException;
 import javax.xml.stream.events.StartElement;
 import javax.xml.stream.events.XMLEvent;
 import java.io.InputStream;
-import java.math.BigDecimal;
 
-@Service
-public class ParseXMLServiceImpl implements ParseXMLService{
+public class Iso200022ParserServiceImpl implements Iso200022ParserService {
 
     @Override
-    public Melding transform(InputStream xml) {
-        Melding melding = new Melding();
+    public String hentMeldingId(InputStream xml) {
+        String meldingId="";
+        try{
+            meldingId= hent(xml);
+           } catch (XMLStreamException e) {
+            e.printStackTrace(); //TODO logging strategi
+            throw new RuntimeException(this.getClass().getName()+"hentMeldingId() feiler:");
+        }
+        return meldingId;
+    }
+
+    private String hent(InputStream xml) throws XMLStreamException{
+        String meldingId="";
         boolean funnet=false;
         XMLInputFactory xmlInputFactory = XMLInputFactory.newInstance();
-        try {
+//        try {
             XMLEventReader xmlEventReader = xmlInputFactory.createXMLEventReader(xml);
             while (xmlEventReader.hasNext() && !funnet) {
                 XMLEvent xmlEvent = xmlEventReader.nextEvent();
@@ -32,7 +38,7 @@ public class ParseXMLServiceImpl implements ParseXMLService{
                                 StartElement _startElement = xmlEvent.asStartElement();
                                 if (_startElement.getName().getLocalPart().equals("MsgId")) {
                                     xmlEvent = xmlEventReader.nextEvent();
-                                    melding.setMsgId(xmlEvent.asCharacters().getData());
+                                    meldingId=xmlEvent.asCharacters().getData();
                                     funnet=true;
                                     break;
                               }
@@ -51,10 +57,10 @@ public class ParseXMLServiceImpl implements ParseXMLService{
                 }
             }
 
-        } catch (XMLStreamException e) {
-            e.printStackTrace();
-        }
-        return melding;
+//        } catch (XMLStreamException e) {
+//            e.printStackTrace();
+//        }
+        return meldingId;
     }
 
 }

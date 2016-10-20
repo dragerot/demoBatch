@@ -1,23 +1,19 @@
 package com.example.steps.avvikshantering;
 
 import com.example.config.BatchConfiguration;
+import com.example.config.ServiceConfiguration;
 import com.example.domain.NokkelInfo;
 import com.example.domain.Transaksjon;
 import org.springframework.batch.core.Step;
 import org.springframework.batch.core.configuration.annotation.StepBuilderFactory;
 import org.springframework.batch.item.ItemProcessor;
-import org.springframework.batch.item.ItemReader;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
-import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Import;
 
-
-
 @Configuration
-@Import(BatchConfiguration.class)
-@ComponentScan(basePackages = {"com.example"})
+@Import({BatchConfiguration.class, ServiceConfiguration.class})
 public class Pain002AvviksHandteringConfig {
     @Autowired
     private StepBuilderFactory stepBuilderFactory;
@@ -32,11 +28,26 @@ public class Pain002AvviksHandteringConfig {
     public Pain002AvvikWriter pain002AvvikWriter;
 
     @Bean
+    public Pain002AvvikReader pain002AvvikReader(){
+        return new Pain002AvvikReader();
+    }
+
+    @Bean
+    public Pain002AvvikWriter pain002AvvikWriter(){
+        return new Pain002AvvikWriter();
+    }
+
+    @Bean
+    public Validertpain002genereringProcessor validertpain002genereringProcessor(){
+        return new Validertpain002genereringProcessor();
+    }
+
+    @Bean
     public Step pain002AvvikStep(){
         return stepBuilderFactory
                 .get("pain002AvvikStep")
                 .<Transaksjon,NokkelInfo>chunk(1)
-                .reader((ItemReader)pain002AvvikReader)
+                .reader(pain002AvvikReader)
                 .processor((ItemProcessor)validertpain002genereringProcessor)
                 .writer(pain002AvvikWriter)
 //				})

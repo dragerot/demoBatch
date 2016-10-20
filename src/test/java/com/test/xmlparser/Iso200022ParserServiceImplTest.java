@@ -1,7 +1,6 @@
 package com.test.xmlparser;
 
-import com.example.domain.Melding;
-import com.example.services.ParseXMLServiceImpl;
+import com.example.services.Iso200022ParserServiceImpl;
 import org.junit.Assert;
 import org.junit.Test;
 
@@ -13,13 +12,13 @@ import java.io.InputStream;
  *
  * @param
  */
-public class ParseXMLServiceImplTest {
+public class Iso200022ParserServiceImplTest {
 
     @Test
     public void aTest(){
-        ParseXMLServiceImpl parseXMLServiceImpl = new ParseXMLServiceImpl();
+        Iso200022ParserServiceImpl parseXMLServiceImpl = new Iso200022ParserServiceImpl();
         InputStream is = getClass().getResourceAsStream("/pint001Examples/pain.001.001.03 NAVtest0001.xml");
-        Melding melding = parseXMLServiceImpl.transform(is);
-        Assert.assertEquals("NAV-UR-001D20160503T002341",melding.getMsgId());
+        String meldingId = parseXMLServiceImpl.hentMeldingId(is);
+        Assert.assertEquals("NAV-UR-001D20160503T002341",meldingId);
     }
 }
